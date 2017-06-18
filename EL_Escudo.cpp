@@ -10,7 +10,7 @@
  * Includes
  ******************************************************************************/
 
-#include "WConstants.h"
+#include "Arduino.h"
 #include "EL_Escudo.h"
 
 /******************************************************************************
@@ -28,12 +28,13 @@
 void EL_EscudoClass::on(char channel)
 {
 	pinMode(channel, OUTPUT);
-	digitalWrite(channel, LOW); 
+	digitalWrite(channel, HIGH); 
 }
 
 void EL_EscudoClass::off(char channel)
 {
 	pinMode(channel, INPUT);
+	digitalWrite(channel, LOW); 
 }
 
 void EL_EscudoClass::all_on(void)
